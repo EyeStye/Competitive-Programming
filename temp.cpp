@@ -88,13 +88,11 @@ vector<T> cumsum(vector<U> &A, int off = 1) {
 }
 
 void solve(){
-  INT(n);
-  int d[4] = {6,8,4,2};
-  print(n ? d[n%4] : 1);
+    
 }
 int main(){
-  // INT(t);
-  int t = 1;
+  INT(t);
+  // int t = 1;
   rep(t) solve();
   return 0;
 }
