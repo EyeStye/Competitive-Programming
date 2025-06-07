@@ -233,7 +233,7 @@ vector<int> argsort(const vector<T> &A) {
 template <typename T>
 vc<T> rearrange(const vc<T> &A, const vc<int> &I) {
   vc<T> B(len(I));
-  FOR(i, len(I)) B[i] = A[I[i]];
+  rep(i, len(I)) B[i] = A[I[i]];
   return B;
 }
 
@@ -243,9 +243,7 @@ void concat(vc<T> &first, const Vectors &... others) {
   (res.insert(res.end(), others.begin(), others.end()), ...);
 }
 
-// #define FASTIO
 #include <unistd.h>
-
 // https://judge.yosupo.jp/submission/21623
 namespace fastio {
 static constexpr uint32_t SZ = 1 << 17;
