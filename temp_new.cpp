@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-//Credits: maspy
+// https://maspypy.github.io/library/my_template_compiled.hpp
 using namespace std;
 
 using ll = long long;
@@ -31,6 +31,7 @@ constexpr long double infty<long double> = infty<ll>;
 using pi = pair<ll, ll>;
 using vi = vector<int>;
 using vl = vector<ll>;
+
 template <class T>
 using vc = vector<T>;
 template <class T>
@@ -61,10 +62,10 @@ using pqg = priority_queue<T, vector<T>, greater<T>>;
 #define FOR3_R(i, a, b) for (ll i = (b)-1; i >= ll(a); --i)
 #define overload4(a, b, c, d, e, ...) e
 #define overload3(a, b, c, d, ...) d
-#define rep(...) overload4(__VA_ARGS__, FOR4, FOR3, FOR2, FOR1)(__VA_ARGS__)
-#define rep_R(...) overload3(__VA_ARGS__, FOR3_R, FOR2_R, FOR1_R)(__VA_ARGS__)
+#define FOR(...) overload4(__VA_ARGS__, FOR4, FOR3, FOR2, FOR1)(__VA_ARGS__)
+#define FOR_R(...) overload3(__VA_ARGS__, FOR3_R, FOR2_R, FOR1_R)(__VA_ARGS__)
 
-#define all(x) x.begin(), x.end()
+#define all(x) (x).begin(), (x).end()
 #define len(x) ll(x.size())
 
 #define eb emplace_back
@@ -208,7 +209,7 @@ inline bool chmin(T &a, const S &b) {
 
 vc<int> s_to_vi(const string &S, char first_char) {
   vc<int> A(S.size());
-  rep(i, S.size()) { A[i] = (S[i] != '?' ? S[i] - first_char : -1); }
+  FOR(i, S.size()) { A[i] = (S[i] != '?' ? S[i] - first_char : -1); }
   return A;
 }
 
@@ -216,7 +217,7 @@ template <typename T, typename U>
 vector<T> cumsum(vector<U> &A, int off = 1) {
   int N = A.size();
   vector<T> B(N + 1);
-  rep(i, N) { B[i + 1] = B[i] + A[i]; }
+  FOR(i, N) { B[i + 1] = B[i] + A[i]; }
   if (off == 0) B.erase(B.begin());
   return B;
 }
@@ -232,7 +233,7 @@ vector<int> argsort(const vector<T> &A) {
 template <typename T>
 vc<T> rearrange(const vc<T> &A, const vc<int> &I) {
   vc<T> B(len(I));
-  rep(i, len(I)) B[i] = A[I[i]];
+  FOR(i, len(I)) B[i] = A[I[i]];
   return B;
 }
 
@@ -511,7 +512,7 @@ void solve(){
   
 }
 int main() {
-  INT(t);
-  // int t = 1;
-  rep(t) solve();
+  INT(T);
+  FOR(T) solve();
+  return 0;
 }
